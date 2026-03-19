@@ -1,0 +1,5 @@
+{
+  "name": "IC LAB",
+  "description": "An interactive digital circuit simulator with breadboards, ICs, and real-time logic simulation.",
+  "requestFramePermissions": []
+}
