@@ -10,7 +10,6 @@ export default function TeamPage() {
     { 
       id: 1, 
       name: 'Mohammed Saeed', 
-      role: 'Founder', 
       icon: <Shield size={16} />, 
       img: '/assets/team/saeed.jpg', 
       contactUrl: 'https://linkedin.com/in/mohamed-saeed-9a81493b1'
@@ -18,7 +17,6 @@ export default function TeamPage() {
     { 
       id: 3, 
       name: 'Mohammed Mahjoub', 
-      role: 'Tester', 
       icon: <Bug size={16} />, 
       img: '/assets/team/mahjoub.jpg',
       contactUrl: 'https://linkedin.com/in/mohammed-mahjoub-303449375'
@@ -26,7 +24,6 @@ export default function TeamPage() {
     { 
       id: 4, 
       name: 'Motwalli Babeker', 
-      role: 'Tester', 
       icon: <Bug size={16} />, 
       img: '/assets/team/noimg.png',
       contactUrl: 'https://wa.me/+249909264804'
@@ -34,7 +31,6 @@ export default function TeamPage() {
     { 
       id: 5, 
       name: 'Mohammed Ebrahim', 
-      role: 'Tester', 
       icon: <Bug size={16} />, 
       img: '/assets/team/noimg.png',
       contactUrl: 'https://wa.me/+249118285227'
@@ -42,7 +38,6 @@ export default function TeamPage() {
     { 
       id: 6, 
       name: 'Elbara Abdelkarim Elradi', 
-      role: 'Tester', 
       icon: <Bug size={16} />, 
       img: '/assets/team/elbara.jpg',
       contactUrl: 'https://linkedin.com/in/elbara-abdelkarim-b86260239'
@@ -50,7 +45,6 @@ export default function TeamPage() {
     { 
       id: 2, 
       name: 'Majzoub AlSiddig', 
-      role: 'Co-Founder & Developer',
       icon: <Code size={16} />, 
       img: '/assets/team/majzoub.jpg',
       contactUrl: 'https://linkedin.com/in/majzoub-siidig' 
@@ -99,7 +93,6 @@ export default function TeamPage() {
               
               <div className="flex items-center justify-center gap-2 text-[var(--muted)] group-hover:text-[var(--fg)] transition-colors">
                 {member.icon}
-                <span className="text-[10px] uppercase font-bold tracking-widest">{member.role}</span>
               </div>
             </motion.a>
           ))}
