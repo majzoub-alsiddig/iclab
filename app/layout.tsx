@@ -120,6 +120,7 @@ export const metadata: Metadata = {
 import { AuthProvider } from '@/hooks/use-auth';
 import { ThemeProvider } from '@/hooks/use-theme';
 import Navbar from '@/components/Navbar';
+import PWARegister from '@/components/PWARegister';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -139,12 +140,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         
         <meta name="msapplication-TileColor" content="#3b82f6" />
         <meta name="msapplication-TileImage" content="/fav/favicon-96x96.png" />
+              <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="IC LAB" />
       </head>
-      <body suppressHydrationWarning className="antialiased">
+      <body>
         <AuthProvider>
           <ThemeProvider>
             <Navbar />
             {children}
+            <PWARegister />
           </ThemeProvider>
         </AuthProvider>
       </body>

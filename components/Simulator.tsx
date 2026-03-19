@@ -442,6 +442,29 @@ export default function Simulator() {
       resetCircuit();
     }
   };
+
+  const saveCircuitOffline = () => {
+    try {
+      const existing = localStorage.getItem('offline-circuits');
+      const circuits = existing ? JSON.parse(existing) : [];
+      
+      circuits.push({
+        name: saveName || `Circuit ${new Date().toLocaleString()}`,
+        data: circuit,
+        date: new Date().toISOString(),
+      });
+      
+      if (circuits.length > 10) {
+        circuits.shift();
+      }
+      
+      localStorage.setItem('offline-circuits', JSON.stringify(circuits));
+      alert('Circuit saved for offline use!');
+    } catch (err) {
+      console.error('Failed to save offline', err);
+    }
+  };
+
   const saveCircuitLocal = () => {
     const data = JSON.stringify(circuit, null, 2);
     const blob = new Blob([data], { type: 'application/json' });
@@ -1424,6 +1447,16 @@ export default function Simulator() {
                   <div className="text-left">
                     <div className="text-[10px] font-bold uppercase tracking-widest">Local Export</div>
                     <div className="text-[8px] opacity-50">Download as .json file</div>
+                  </div>
+                </button>
+                <button 
+                  onClick={saveCircuitOffline}
+                  className="w-full flex items-center gap-4 p-4 bg-[var(--border)] hover:bg-[var(--accent)] hover:text-[var(--accent-fg)] transition-all rounded-xl group"
+                >
+                  <HardDrive size={20} className="text-[var(--accent)] group-hover:text-inherit" />
+                  <div className="text-left">
+                    <div className="text-[10px] font-bold uppercase tracking-widest">Save Offline</div>
+                    <div className="text-[8px] opacity-50">Store locally for offline use</div>
                   </div>
                 </button>
                 <div className="h-px bg-[var(--border)]" />
